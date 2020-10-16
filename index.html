@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="marquee.js"></script>
+
+<script>
+    document.getElementById('vid').play();
+</script>
+
+<div class="noselect" id="clockbox" style="color: #ffffff;
+    font-size: 1em;
+    margin:0;
+    padding:0;
+    text-align: center;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(200%);"></div>
+
+    <script>
+      document.head = document.head || document.getElementsByTagName('head')[0];
+function changeFavicon(src) {
+    var link = document.createElement('link'), oldLink = document.getElementById('dynamic-favicon');
+    link.id = 'dynamic-favicon';
+    link.rel = 'shortcut icon';
+    link.href = src;
+    if (oldLink) {
+        document.head.removeChild(oldLink);
+    }
+    document.head.appendChild(link);
+    }
+function animate(){
+    if ( typeof animate.i == 'undefined' ) {
+        animate.i = 0;
+    }
+    switch(animate.i) {
+        case 0:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAADLElEQVRIS81Vy0pyYRRdll3IRo6im4WkbxBR2c2SnqCBNtGgNxACkQJpkA8QBJVFL9CsBpUa3V6gaYGiROMIzez8rA378HWhbPD//AcOHs/3nb32Wnvv9Tksy7Lwly/HfwHy+voKp9MpXGu1mjw7HA68vb2BIjQ3N9trLS0tqFQqaG9vf6dNQ0wY7OXlRQIShM+tra0SiEkQVMG+Uv5bEGVRr9ftINVqFW1tbe9iKSjXmpqaQEbm9SOTXC6HtbU1nJ2diUTMmKAq4fPzMzo6OnBxcYFAICASmhIT7FsQ1uDx8RG9vb3Y3d1FNBoVIGbLX1585r7Ly0tMT0/bteJ7vRzVatVSfU2tzSBLS0vo6urC+vq6sGC2ZDIwMIBMJiPBs9ksZmZmZI0362SDsIUZkC95c8PCwgIODw/lWTPVNZXr9PQUsVisMZB6vW4pNVNLZaKS8P/19TXGx8cFnKx9Pl9jIDqM1JVdoUAsNmWMx+N2t6ysrODm5gbHx8cyC7+S62M3UPerqytMTExI9sPDwyLb0NAQFhcXsbq6KnL/CkQLpAUjCOVZXl7G+fk5jo6OUCqVpLD39/cSnMwJ2nDhFYSBqbVpCyMjI3C5XPB6vbi9vZUu0m5smIkW3pxqZqlWwcz9fr/U6uTkBMFgUNqYXdYwSK1Ws3R6KRcBmKmeAASbmppCPp8Hp5910nYeHBzE9vY2ZmdnRdbJyUn7OzNpmXi+YGF1Lpi1/k+n00gmkxL87u5O7MPtdouVUMKtrS1hRxn5S8k10U/DqI6qevN/uVxGT08PNjc3MT8/LxmPjo7i4OBAvleHYGCy5DoTJlPTPYSJ+hE/pJOS0cPDgxheKBTCzs6OBGVN5ubmsLe3h0gkItaiBsmWHxsbs+Uyx0JA1L51oVgsijwej0dkYGa6h0Pa19cH+tn+/j76+/vFuxKJhDAsFAp2Y3wySGavVs7NzJpBNFNlaZ4VqVQKvPltd3c3NjY2EA6HP52OwuTp6QmdnZ22a2ojkIHajakxN3IPb9ZQ16gEL7b3OxfWOdFp58aPmz7OkJ7z5uln7uF70+5/PBm/OrN/++6fgPwB5AiU1MJWFjoAAAAASUVORK5CYII=");
+            break;
+        case 1:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAB9ElEQVRIS+1WTc4BQRCt8R8nsLCw4QhWSDiEDRskbiCxICy4BhIXsGPjJ+LvFmJh4wBiMObLq6SkiW/07NVmhqquV/Wq+/UYtm3b5GBwG4ZB8mw0GjQcDulwODgte/EZ30AQ3Ww2qdPp8EKv10uDwYAKhQKD65gjiGVZnPTdTNOkYDCok59jHEGEotvtxsF+v59p44WaXXwFQcD1eqVAIMCJBfTxeDCILpDWTLR5+SfwB+KKwR9dP7o+M3C/38nn87ET8oJ3nHSceiiAaBt8kJ3L5UKhUMi9CiMZ5AUJAaJKDYoA6CchFSTHLSxdqGr8SYEFFD6Px8Mdqfb1nCwWC2q32zSbzZgiVAxQofB8PlM4HKbVakXpdJopVCn+qsLg+XQ6UTQapV6vR6VSiYFQLZ4wvCNuvV5TNpt9zgr/P+kyTdMWKVe5VpNUKhWKRCLU7Xa5C1SLTmKxGPX7fU4+n88pl8uxT66El5mo9wMC8vk8jUYjDpZK5Z4XuqbTKZXLZT0Qy7JsaU3lUjoRSvB7u91SKpVicHSdSCT0QORDQva5AGHYoLFWqz13S71ep91uR5PJhM+CK7redwN432w2lMlkuPpkMsm0xeNxKhaL1Gq1mG5XIDIgGRhAQE+1WqXlcknj8ZiOxyMPdr/fc3J0DlCdwf8BN2qkxQkahyQAAAAASUVORK5CYII=");
+            break;
+        case 2:
+            changeFavicon("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAZABkDASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAECBAYHCP/EACIQAAIBBAIDAAMAAAAAAAAAAAECAwAEBRIGERMhMhUxcf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDo7lib4d0/EXOWYupWG3FuXRgdlkHnZY+1YKwJJ6IB6NZVm8nzKyzfHrSObniJkLqSGRJlwRkkCwSydR6jUN2gJL9DUED2QK3Cq1JxYXPKLPNX2WyV0bJ5JLSzk8KwQM6FCw0jV2OrMBszfRoIfB0vluLtsrjM6t46qGyOWGOEkiAnWIG0b2qkuw2X9u3v31VxoooCjsUU0fZ/tA7v3RSL80tB/9k=");
+            break;
+        case 3:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACMUlEQVRIS61Vvc4BURCd9e8FRMlrKAiNqJUaPAeJwkvoiJfQCFEqtGqJgk7nb9kv5yZnc3ex98bnJiJ278yZc87McDzP8+TDwSvHceR6vUo6nRb8fj6fEo/HP4W8fe5EgSDCdV1JJBJ+8Pl8lmw2+zuQ+/0uyWRSHo+Hqv5yuUgmk1EAfGeDZmQSTnK73SSVStnk9u9EgsAD+IHqv2UBpEgQmByLxVRF9AbP8NF9MtEyyoWEOGAFX6rVqgwGAymXy6rzbI7juq7HlkRCBCIhGNBwMsG7er2uWC2Xy5fOYzzu6SoEmFD34/Eo+XxeFQkwBNBsGM9n9IpsMEvb7VaKxWKAoALROwZGHw4HKRQKslqtpFQqKZlQPUHpkx632+1UzH6/l1wupwqhQgqEk40kpIk5AG0YzInnfOA+5kffBpCWRYS98uVCUqKzwk6nI+PxWAGRCRLQN4DpkuE3C37xRF8dfBmWEHqjkPV6LZVKRbBewIZrhnvtHRvFJLwiCKp3F6Wcz+fSaDR8ZnqsXr1uQaC7mLTdbstkMvFlgYHUHF0GlnpHwTOebrcro9EoMKzGYdR7Eck2m43quIh/iJf5NIKQHaWYzWbSbDbldDopT2yOcUGik+ARviHbYrGQWq32WyY0kN+9Xk+m06lg+GyPUS4k6vf7MhwOVU6wwey0Wi37BRn19xtuYVaubwAbNlaeYBZwYDS7ynbNI84olz75+srgevk3E5sENneMTGySmO78AT7vvMUrMnxGAAAAAElFTkSuQmCC");
+            break;
+        case 4:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAABvElEQVRIS+1US64BURA97W8DYsg2DIiR2AVWYhtmLEQihjZgLDFgBX5Nv5xKzk21iG4veaPnJh2ddutzPlVRkiQJ/vhE3yKfMPyl6xO28E/out/vKBaLRo1/5/zyKRQKuWh7SxcTRVGEy+WCarVqiR+PRyicqwKQrUkcxyiVSiHf6XRCvV7Pm9/uvUVyu91QLpcDVefzGbVazQL1X55qH7vrer2iUqnkyR3uZGpCPdj9b1Fk0kWR5SBpw298vE5ZsDLpYkIeOot27vf7mE6n6Ha75rw8J4rjONEsMCEDNQN+NoiE/w0GA/B9tVrZr0ekeN7zLKSQiPfj8Yhms2lNki4GSGwKr2/SSmg4S9vtFu12OwXQinjHUOjD4YBWq4X1eo1Op2M0sWsVlU4+brfbWcx+v0ej0bBGxJAV0WQziWByDgibdGjiNR+8z/nx24DUqolnrQJdTKrq6nA8HmM+n1shIWEC6cZinjLttJeaeAGF5JlC8s1GNpsNer0euF6IRmtGe+0VGkPyvCJU1LtLVC6XSwyHw4DMx3pHeQlS7lLS0WiExWIRaKGA4pwuI0rvKGqmM5lMMJvNUtb+AZqufcXvyDZSAAAAAElFTkSuQmCC");
+            break;
+        case 5:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACW0lEQVRIS+1WSYoqQRCNcsTpBoLX8CbiPKCCC8W1Z3DjSnAeD+JNBE8gKJZTVfMCIwm7pfHzXXZAUZmVkTG8FxFqOY7jWpZFkOv1Sj6fjy6XCwWDQXJdl+QM3wKBgNHz+/28Pp/PrAs5nU4UCoV4rcWybdsVJTlwHIc8Hg9vsYY0Gg06Ho+0Wq14n0qlKBKJ0HA4JK/X+xSQdgxdy0W4D2MwiEx2ux0lEglz8aFCxWKRZrMZR99sNmk0GrFDOUd2m82GksmkQcA4AUySPtaSBSKEAKpyuUyxWIx6vR7Dk8/n2TgyE1jxBmThcPgZrvv97sLo/X7nCLWC5qFerzNcy+WSgygUChzYeDxmg7fbjVF4JRacCLl4wxkywBrGEB0eGMhkMjSfz3lfKpVosVgYm7iDu9vtluLxONsQMZzoStLRiFPAA0fT6ZQzarfbbHQymRh17CU4XTzGiRAo1QRlecATjO73e1Nd2WyW4QL5cK55/VHCqC4o4AEfeHe7Xep0OqwLkvENzkG+lCwyW6/XDCkygMBpOp2mfr//xC1zAqgEQ+FA84F1rVYz8KBAWq0W2bbNcOkqlIbV8P+AS4pAK2Gdy+U4UvQJBNUFg8gMd1CJUvrfq8zCWOGGeYwWjad2VK1WORMQj3elUuEMBoOBqUa5q0ln23p2wSgUpEKksqQYEKnuh+/jB+eHw4Gi0ehzM8pYedlFj4/SlHAKQ7qf5J4EJCNKoDNj5TcHnzh7Iv4TBl+OlXfg+l/nf5n8E4J/cH0OLt3Feq0n9TvefuVEBqT8xZHZpn9a33HyBYS3xcVBAN7yAAAAAElFTkSuQmCC");
+            break;
+        case 6:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAADHklEQVRIS5VWy04qQRCtEVABXbIxArrQlR/AnxB5qYAmLiCs+QY3rDTyFPFD/A4iUUyIWxJ5iMLcnLpWp2a8F7WTSfd0N3WqTp2qwbJt26YfjsViwTdXVlZ4ns/nhD2Px8N7MGVZFs8YWPO8DAQGcBHPZDIhv99vDAEAxmUse18Koj0Tr97f38nr9TIwnMCDdw3iBlwKIpc/Pj6YDjwwihlgPp/PEQn2Ae4+WwoivIMWGEdkmiKcwyDO1tbWjAPYF2e+zYlE8vDwQAcHB9TtdikUCnEkg8GAdnd36fHxkSKRCE2nU1pfX+fI9PpbEPH05eWFDfX7fQqHw+w99qLRKMGBra0tjkRHPpvNaHV19a+6FouFrXmE96enp9RsNo1cRbqSABh8e3sz+RD5gs5cLkdXV1csBhmcE60YORBl4f3p6Yn29vaYLniP+9jb39+nXq9HOzs7xuB4PKZAIEAQiwCZSIQaHCBUeKuBdPhaPYhIqJJaMoifC2s6ndpySQ61MoSq8/NzGo1G1Ol0+Fo8HqdgMEjVapUVpx3SwI7E68J6fn5mWtxt4ujoiFqtFuejUChQrVZjQGkjqJv7+3uKxWKmpRgQHT7W0pukJkDVyckJbW5uUqVSYXrS6TQbR2TaGVCGnOhhzedzG0ahKnioL+g8nJ2dMV23t7fsRCaT4Yqv1+tsTyf6S04AYrqlZZkehD0tTQgikUjQzc0Ne358fEztdtvYQ9RwFMW5vb3t6AymrejEaU+k6kEPgFA/iKhUKrHRRqNhruNdnPtvWwGQqElavBQqjA6HQ6OuZDLJdCH5AHc3RUdOpBhxCfnAfHFxQeVyme8hydIEkXyRLCK7u7tjShEBBkAPDw/p8vLSkVtOvO6uWOPR+cAarUbogUCKxSI3QtClVSj9StPvaPX6wL1OpVLsKeoEA+qCQUQGSqFEkb7uW1wnaJC8+Pweay41UD6f50iQeMzZbJYjuL6+5ln/XifdgMgFSbwoRJSl/0DoenC3H0Ty+vpKGxsbzmL8yb8VKUqAyid22R+HL5H8BMRdwb99//Yb/1uD/7r/Bx56atQASQiGAAAAAElFTkSuQmCC");
+            break;
+        case 7:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAADDElEQVRIS+1W20pqURQdVprdXgRfErsQ9uQHiGIXSukPgiIiooce/AIJhJ7yrRdRVCzyM4JMpJ+QIguiD+iyzXQfxjzMzbITwoFz3loge7vmXHPOMdZaY25Xp9OxR0ZGwGHbNjqdDjwej7xzuFwurKys4Pr6GrVaDUtLSzJH+/z8PEqlEtbX11Gv17G8vOys63a7GB4e/h3Dtm2bE0NDQ+LA5+fnp/M/m83i6OhIgt/d3aHRaMDn82F8fBwLCwsoFApYW1vD1dWVPHu9nlOoZNAkNHAwOFHoeHp6QiAQQC6Xw8bGhlQcjUZxcXEhLh8fH+LP9URJOwsmUrX1JSECjna7LYien58Rj8eRTCZRLpfFdnl5iUQigbOzM2xvb4M0v729CaqbmxvEYjGHLhas2yB0MfDo6KggoeHx8VHomZ2dFRpYmfpkMhkEg0Hs7+/j/PwcMzMzWF1dRTqdFoQPDw+CRvdDkLTbbVs3mrBppDOrZhCtVFG63W6HzuPjY/BH5NPT0zg5OcHW1hYsy4LX63X8BMnLywsmJyedST0IRMDTxsAmx3SkD38sUG1kgoOFcq2z8d1u19aTRQMdvzqZ8JmUlJpBNKlJEdGpjyBxUv6nl58kf0XsD13/ji69H6rKvE9UBT71kmq27y5wnwoPKksTMTivlHnhuI7JaKP2aQGcN98HbrwmuL29RTgcRrPZhN/vFyRsA2xa9/f3IpKmXn2rXYOQsFLKPgNRYanAOkeVZgEURyIx5aWvn/R6PdsUQlZ/cHCASqUii3QfzEIYkNKvQ7WPdLIF5PN5p5eI1FO7vhM9U+BarRZCoZDQxerpz7nFxUVpyXNzc05CbQ19TUuR6CZSYQmV1ZqJTPjmydJmxvXv7+8YGxv7g32XZVm28qnWr6eE84eHh3h9fUW1WhW3zc1NTExMoFgsyokzCzITO3TpkWNwbb+kRRdqN9jd3ZX+ziCpVEo+hzjUzubGT6dIJNLftHRPtK2SCv2o0DtBqvb29jA1NYXT01OhcmdnR4ITmVkMKeOHhTl+ASe/MdQ8/1FEAAAAAElFTkSuQmCC");
+            break;
+      case 8:
+            changeFavicon("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAZABkDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAcCBAYI/8QAKxAAAQMDAwIDCQAAAAAAAAAAAQIDBAAFEQYSIRMxByJyFDQ2N0F1sbK1/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOidbWJOotNy4HQgPSFJ3x/b4qJDKXQPKVIUCCMnBxyATikexbLJfYGub3C0pbLIuxWGVbXI7MRpBbnlCy+QUgZ2pSgJX9QtWO5FPnUrF2lWl1iwymIU50hAkvILnRST5lpT2UoDsDxnGeOKzFu8ObbY3erYUobbXb1wZcSSnqNXAnJSt8nlStyl5VgkhagaCOivmPqP7NaPzLpgVjtH2W8RtQ3m831m3RnpseJFbjQHlvIQljqnduUhHcunACeABya2NAUZoPY0mtTfCPjb63/5segcoOaKrxPd2fSP1qxQf//Z");
+            break;
+        case 9:
+            changeFavicon("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAADLElEQVRIS91Vy0pyYRRdZpZUo0aRZUZYbyDRxcosegIH1sSE3iAIQgyiQT1AEGQXeoFmNSi70O0FmhYkSjQO6XSyE2vDPnxdSBv8k//AweP5vrPX2mvvvT6P4zgO/vHlqQby9vaG+vp6oWHbtjx7PB68v7+D/Lxer7vm8/nw8vICv9//iXZVEO5msNfXVwlIED43NDRIIJIgqIL9JMqvIJpFpVJxg1iWhcbGxk+xFJRrdXV1YEbmVTWT09NTLC0tIZ/Pi0RkTFCVsFwuo6mpCRcXFxgeHpasTYkJ9isIa/D09ISOjg5sbW0hlUoJENnylxefue/y8hJjY2NurfheL49lWY7qa2ptBkmn02hra8PKyopkQbbMJBQKYXt7W4KfnJwgFovJGm/WyQVhdzEgX/LmhkQigf39fXlWprqmch0fH2N2drY2kEql4mhqppaaiUrC/9fX1xgaGnK7rbe3tzYQnRPqyq5QIBabMs7Pz7vdsrCwgJubGxweHsos/Emur91A3a+urhCNRoV9JBIR2cLhMGZmZpDNZkXuP4FogbRgBKE8c3NzOD8/x8HBAYrFohT2/v5egjNzgtZceAVhYHaYaQv9/f1obm5GT08Pbm9vpYu0G2vORAtvTjVZqlWQeV9fn9Tq6OgI4+Pj0sbssppBbNt2dHopFwHIVM2ZYKOjozg7OwOnn3XSdu7u7sbm5ibi8bjIOjIy4n5nkpaJ5wsWVueCrPX/2toaMpmMBL+7uxP7aG1tFSuhhBsbG5IdZeQvJVei34ZRHVX15v9SqYRAIID19XVMTU0J44GBAezt7cn36hAMzCy5TsLM1HQPyUT9iB/SSZnR4+OjGN7k5CRyuZwEZU0mJiaws7OD6elpsRY1SLb84OCgK5c5FgKi9q0LhUJB5Onq6hIZyEz3cEg7OztBP9vd3UUwGBTvWlxclAwfHh7cxvhmkGSvVs7NZM0gylSzNM+K5eVl8Oa37e3tWF1dRTKZ/HY6SibPz89oaWlxXVMbgRmo3ZgacyP38GYNdY1K8GJ7f3JhnROddm78uunrDOk5b55+5h6+N+2+6sn405n913f/D8gHRgqU1Cp+DhsAAAAASUVORK5CYII=");
+            break;
+        
+    }
+    animate.i = animate.i + 1;
+    if(animate.i == 16){
+        animate.i = 0;
+    }
+}
+setInterval(animate,350);
+    </script>
+
+<script type="text/javascript">
+function GetClock(){
+var d=new Date();
+var nmonth=(d.getMonth()+1),ndate=d.getDate(),nyear=d.getFullYear();
+if(nmonth<=9) nmonth="0"+nmonth;
+if(ndate<=9) ndate="0"+ndate;
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+nyear+"-"+nmonth+"-"+ndate+" "+nhour+":"+nmin+":"+nsec+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+</script>
+
+
+
+</head>
+<style>
+
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  text-shadow: 0 0 5px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+
+  h1 {text-align: center;}
+  h1 {color: #ffffff;}
+  h1 {
+    font-size: 3em;
+    margin:0;
+    padding:0;
+    text-align: center;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  p{
+    color: #ffffff;
+    font-size: 1em;
+    margin:0;
+    padding:0;
+    text-align: center;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(200%);
+  }
+
+ a { 
+  text-decoration: none;
+  color:#ffffff; 
+ }
+
+ a:hover {
+  color:#ffffff;
+  text-decoration: none;
+  cursor:pointer;
+ }
+
+</style>
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  雌
+  </div>
+  <div class="snowflake">
+  書
+  </div>
+  <div class="snowflake">
+  キョウ
+  </div>
+  <div class="snowflake">
+  挙
+  </div>
+  <div class="snowflake">
+  爱
+  </div>
+  <div class="snowflake">
+  接吻
+  </div>
+  <div class="snowflake">
+  キモい
+  </div>
+  <div class="snowflake">
+  思い
+  </div>
+  <div class="snowflake">
+  湊
+  </div>
+  <div class="snowflake">
+  あくあ
+  </div>
+  <div class="snowflake">
+  好き
+  </div>
+  <div class="snowflake">
+  密接
+  </div>
+</div>
+
+<video height="256" loop autoplay id="vid">
+         <source type="audio/mp3" src="demo.mp3"></source>
+         <source type="audio/ogg" src="demo.ogg"></source>
+</video>
+
+<body style="background-color:black;">
+
+
+
+<h1 class="noselect"><a href="https://steamcommunity.com/id/ain_3/" target="_blank"> 刘宇菲 </a></h1> 
+<p></p> 
+
+
+</body>
+
+</html>
+

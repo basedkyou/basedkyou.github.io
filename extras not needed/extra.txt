@@ -1,0 +1,27 @@
+case 7:
+            changeFavicon("[PUT BASE64 for ICO FRAME 8 HERE]");
+            break;
+        case 8:
+            changeFavicon("[PUT BASE64 for ICO FRAME 9 HERE]");
+            break;
+        case 9:
+            changeFavicon("[PUT BASE64 for ICO FRAME 10 HERE]");
+            break;
+        case 10:
+            changeFavicon("[PUT BASE64 for ICO FRAME 11 HERE]");
+            break;
+        case 11:
+            changeFavicon("[PUT BASE64 for ICO FRAME 12 HERE]");
+            break;
+        case 12:
+            changeFavicon("[PUT BASE64 for ICO FRAME 13 HERE]");
+            break;
+        case 13:
+            changeFavicon("[PUT BASE64 for ICO FRAME 14 HERE]");
+            break;
+        case 14:
+            changeFavicon("[PUT BASE64 for ICO FRAME 15 HERE]");
+            break;
+        case 15:
+            changeFavicon("[PUT BASE64 for ICO FRAME 16 HERE]");
+            break;
