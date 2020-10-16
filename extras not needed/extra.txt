@@ -25,3 +25,10 @@ case 7:
         case 15:
             changeFavicon("[PUT BASE64 for ICO FRAME 16 HERE]");
             break;
+
+
+
+
+
+
+

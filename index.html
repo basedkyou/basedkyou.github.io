@@ -2,6 +2,19 @@
 <html>
 <head>
 
+<div class="noselect" id="clockbox" style="color: #ffffff;
+    font-size: 1em;
+    margin:0;
+    opacity:1;
+    padding:0;
+    position: fixed;
+    text-align: center;
+    font-family: 'Hiragino Kaku Gothic Pro';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index:1000;
+    transform: translateX(-50%) translateY(200%);"></div>
 
   <link rel="stylesheet" href="style.css">
 
@@ -17,16 +30,7 @@ window.onload = function() {
     document.getElementById('vid').play();
 </script>
 
-<div class="noselect" id="clockbox" style="color: #ffffff;
-    font-size: 1em;
-    margin:0;
-    padding:0;
-    text-align: center;
-    font-family: 'Hiragino Kaku Gothic Pro';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(200%);"></div>
+
 
     <script>
       document.head = document.head || document.getElementsByTagName('head')[0];
@@ -84,6 +88,8 @@ function animate(){
 }
 setInterval(animate,350);
     </script>
+
+
 
 <script type="text/javascript">
 function GetClock(){
@@ -157,6 +163,26 @@ document.addEventListener('contextmenu', event => event.preventDefault());
   cursor:pointer;
  }
 
+#clockbox {
+  opacity:1;
+}
+
+.fade-in {
+  animation:fadeIn 10s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+
+
+
 </style>
 <div class="snowflakes" aria-hidden="true">
   <div class="snowflake">
@@ -197,10 +223,22 @@ document.addEventListener('contextmenu', event => event.preventDefault());
   </div>
 </div>
 
+<video class="fade-in" autoplay muted loop id="myVideo" style=" min-width: 100%;
+  min-height: 100%;  right: 0; position:fixed;
+  bottom: 0;
+">
+  <source src="hmmp_umbrella.mp4" type="video/mp4">
+</video>
+
+
 <audio autoplay loop>
       <source src="demo.mp3">
       <source src="melancholy.mp3">
 </audio>
+
+
+
+
 
 <body style="background-color:black;">
 
