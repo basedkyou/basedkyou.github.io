@@ -7,6 +7,12 @@
 
   <script src="marquee.js"></script>
 
+  <script>
+window.onload = function() {
+  var context = new AudioContext();
+}
+</script>
+
 <script>
     document.getElementById('vid').play();
 </script>
@@ -191,10 +197,9 @@ document.addEventListener('contextmenu', event => event.preventDefault());
   </div>
 </div>
 
-<video height="256" loop autoplay id="vid">
-         <source type="audio/mp3" src="demo.mp3"></source>
-         <source type="audio/ogg" src="demo.ogg"></source>
-</video>
+<audio autoplay>
+      <source src="demo.mp3">
+</audio>
 
 <body style="background-color:black;">
 
