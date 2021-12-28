@@ -1,0 +1,173 @@
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+    margin: auto;
+    z-index:  10;
+    font-size: 50px;
+    text-align: center;
+    font-family: Yu Gothic;
+}
+
+a { 
+    color: inherit; 
+    text-decoration: none;
+} 
+
+p {
+    color: white;
+    margin: auto;
+    z-index:  10;
+    font-size: 20px;
+    text-align: center;
+    font-family: Yu Gothic;
+}
+
+.button-style {
+    color: white;
+    height: 5vw;
+    font-size: 5vh;
+    align-content: left;
+    justify-content: left;
+    margin-top: 60vh;
+    margin-left: 10vw;
+    font-style: italic;
+    border:  none;
+    background-color: inherit;
+    z-index: 1000;
+    font-family: Yu Gothic;
+}
+
+.fullscreen-video {
+    position: fixed;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -10;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.style-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -9;
+}
+
+.enter-overlay {
+    position:absolute;
+    background:black;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index:100;
+    text-align: left;
+}
+
+/* fade*/
+.fade {
+    -webkit-animation-duration: 9s;animation-duration: 9s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    z-index: -5;
+}
+
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+}
+/* end fade*/
+
+/* fade*/
+.button-fade {
+    -webkit-animation-duration: .5s;animation-duration: .5s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+    z-index: -5;
+}
+
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0;}
+}
+/* end fade*/
+
+/* fade in 2*/
+.fadeInParticles {
+    -webkit-animation-duration: 9s;animation-duration: 9s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    z-index: -10;
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+}
+/* end fade in*/
+
+/* particles */
+#particles-js {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  z-index: 5;
+}
+
+/* fade in 3*/
+.fadeIn {
+    -webkit-animation-duration: 7s;animation-duration: 7s;
+    -webkit-animation-fill-mode: both;animation-fill-mode: both;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    z-index: 10;
+}
+
+@keyframes fadeIn {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+}
+/* end fade in*/
+
+#clockbox {
+  opacity:1;
+}
